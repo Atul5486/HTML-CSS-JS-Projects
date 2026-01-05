@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locomotive js</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+<style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(139,197,216);
+}
+#page2{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(68,161,192);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(10,109,143);
+}
+#page2 img{
+    height: 500px;
+    width: 400px;
+    object-fit: cover;
+    object-position: center;
+
+}
+    </style>
+</head>
+<body>
+    <div id="main" data-scroll-container>
+        <div id="page1" data-scroll></div>
+        <div id="page2" data-scroll>
+            <img data-scroll data-scroll-speed="2" src="https://media.istockphoto.com/id/2149636751/photo/portrait-of-her-she-nice-well-dressed-attractive-lovely-luxury-pretty-cheerful-girl-isolated.webp?a=1&b=1&s=612x612&w=0&k=20&c=3ajjZiP6hVzsKfXJWHKiYya9990FJekJSrfEdNhIQEI=" alt="">
+            <img data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9kZWx8ZW58MHx8MHx8fDA%3D" alt="">
+        </div>
+        <div id="page3" data-scroll></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script>
+        const scroll =new LocomotiveScroll({
+    el:document.querySelector("[data-scroll-container]"),
+    smooth:true,
+    lerp:0.02,
+})
+    </script>
+</body>
+</html>

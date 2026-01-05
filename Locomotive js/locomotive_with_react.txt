@@ -1,0 +1,3 @@
+Step 1:- Installation --> npm i locomotive-scroll@beta
+Step 2:- import --> import LocoMotiveScroll from 'locomotive-scroll' 
+Setp 3:- --> const locoMotiveScroll =new LocoMotiveScroll()
