@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="utlity.css">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+    <title>Spotify Clone</title>
+</head>
+<body>
+    <div  class="loader-wrap">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+        <div class="loader-wrap-heading">
+            <div class="load-text">
+                <span>L</span>
+                <span>o</span>
+                <span>a</span>
+                <span>d</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+            </div>
+        </div>
+    </div>
+    <div class="container flex">
+        <div class="left">
+            <img class="close" src="img/close.svg" height="35px">
+            <div class="home m-1">
+                    <div class="logo flex a-center space">
+                        <img src="img/logo.svg" alt="Logo">
+                    </div>
+                    
+                <ul>
+                    <li> <i class="ri-home-4-fill"></i>Home</li>
+                    <li><i class="ri-search-line"></i><input type="search" placeholder="Search" id="search"></li>
+                </ul>
+            </div>
+            <div class="library m-1">
+                <div class="heading flex">
+                    <i class="ri-building-2-line"></i>
+                    <h2>Your Library</h2>
+                </div>
+                <div class="songList">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="header flex">
+                <div class="nav flex space a-center">
+                    <img class="hamburger" src="img/hamburger.svg" height="35px">
+                        <i class="ri-arrow-drop-left-line"></i>
+                        <i class="ri-arrow-drop-right-line"></i>
+                </div>
+                    <div class="button">
+                        <button class="signupbtn">Sign up</button>
+                        <button class="loginbtn">Log in</button>
+                    </div>
+                </div>
+                <div class="spotifyPlaylist">
+                    <h1>Spotify playlist</h1>
+                    <div class="cardContainer">
+                
+                    </div>
+                    <div class="playbar">
+                        <div class="seekbar">
+                            <div class="circle">
+
+                            </div>
+                        </div>
+                        <div class="abovebar flex a-center">
+                            <div class="songinfo">
+                            </div>
+                            <div class="songbutton flex j-center">
+                                <img id="previous" src="img/prevsong.svg" alt="">
+                                <img id ="play" style="margin-left:7px ," src="img/play.svg" alt="">
+                                <img id="next"src="img/nextsong.svg" alt="">
+                            </div>
+                            <div class="timevol flex  a-center">
+                                <div class="songtime"></div>
+                                <div class="volume flex a-center  space point">
+                                    <img src="img/volume.svg" alt="">
+                                    <div class="range">
+                                        <input class="point" type="range" name="volume" value="100">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>  
+    const svg = document.getElementById("svg");
+    const tl = gsap.timeline();
+    const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+    const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+
+    tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
+        delay: 2,
+        y: -100,
+        opacity: 0,
+    });
+    tl.to(svg, {
+        duration: 0.5,
+        attr: { d: curve },
+        ease: "power2.easeIn",
+    }).to(svg, {
+        duration: 0.5,
+        attr: { d: flat },
+        ease: "power2.easeOut",
+    });
+    tl.to(".loader-wrap", {
+        y: -1500,
+    });
+    tl.to(".loader-wrap", {
+        zIndex: -1,
+        display: "none",
+    });
+
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+.flex{
+    display: flex;
+}
+.j-center{
+    justify-content: center;
+}
+.a-center{
+    align-items: center;
+}
+.m-1{
+    margin: 5px;
+}
+.space{
+    gap: 10px;
+}
+.point{
+    cursor: pointer;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #444; /* Dark gray thumb */
+    border-radius: 6px; /* Rounded corners */
+    border: 3px solid #1e1e1e; /* Padding between thumb and track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Slightly lighter gray on hover */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1e1e1e; /* Very dark background track */
+    border-radius: 6px; /* Rounded corners for the track */
+}
